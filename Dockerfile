@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:stretch-slim
 MAINTAINER Tikia "renaud@tikia.net"
 
 #Update OS
@@ -31,7 +31,7 @@ RUN service apache2 restart
 EXPOSE 80
 
 #Define Volume
-VOLUME ["/var/www/", "/etc/apache24/vhosts/", "/var/log/apache"]
+VOLUME ["/var/www/", "/etc/apache24/vhosts/", "/var/log/apache/"]
 
 #Define CMD
 #CMD [""]
