@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM debian:stretch
 MAINTAINER Tikia "renaud@tikia.net"
 
 #Update OS
@@ -31,7 +31,7 @@ RUN service apache2 restart
 EXPOSE 80
 
 #Define Volume
-VOLUME ["", ""]
+VOLUME ["/var/www/", "/etc/apache24/vhosts/", "/var/log/apache"]
 
 #Define CMD
-CMD [""]
+#CMD [""]
