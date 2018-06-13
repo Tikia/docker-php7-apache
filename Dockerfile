@@ -8,7 +8,7 @@ RUN apt-get -y upgrade
 #Install NTP
 RUN apt-get -y install ntp ntpdate
 
-# Install "curl", "libmemcached-dev", "libpq-dev", "libjpeg-dev", "libpng12-dev", "libfreetype6-dev", "libssl-dev", "libmcrypt-dev",
+# Install "curl", "libmemcached-dev", "libpq-dev", "libjpeg-dev", "libpng12-dev", "libfreetype6-dev", "libssl-dev", "libmcrypt-dev", "libxml2"
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         curl \
@@ -20,6 +20,7 @@ RUN apt-get update \
         libfreetype6-dev \
         libssl-dev \
         libmcrypt-dev \
+        libxml2 \
     && rm -rf /var/lib/apt/lists/*
 
 # Install the PHP mcrypt extention
