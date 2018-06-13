@@ -22,9 +22,6 @@ RUN apt-get update \
         libmcrypt-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Install the PHP common extention
-RUN docker-php-ext-install common
-
 # Install the PHP mcrypt extention
 RUN docker-php-ext-install mcrypt
 
@@ -41,6 +38,15 @@ RUN docker-php-ext-install gd && \
         --with-jpeg-dir=/usr/lib \
         --with-freetype-dir=/usr/include/freetype2 && \
     docker-php-ext-install gd
+
+# Install the PHP dom extention
+RUN docker-php-ext-install dom
+
+# Install the PHP exif extention
+RUN docker-php-ext-install exif
+
+# Install the PHP json extention
+RUN docker-php-ext-install json
 
 # Install the PHP curl extention
 RUN docker-php-ext-install curl
@@ -75,6 +81,9 @@ RUN docker-php-ext-install tidy
 # Install the PHP xml extention
 RUN docker-php-ext-install xml
 
+# Install the PHP simplexml extention
+RUN docker-php-ext-install simplexml
+
 # Install the PHP xmlrpc extention
 RUN docker-php-ext-install xmlrpc
 
@@ -89,6 +98,9 @@ RUN docker-php-ext-install gettext
 
 # Install the PHP zip extention
 RUN docker-php-ext-install zip
+
+# Install the PHP shmop extention
+RUN docker-php-ext-install shmop
 
 #Activate Apache module : SSL, rewrite include status
 RUN a2enmod rewrite ssl include status
