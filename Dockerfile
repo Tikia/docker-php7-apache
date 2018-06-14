@@ -117,7 +117,7 @@ RUN apt-get -y install letsencrypt.sh-apache2
 EXPOSE 80
 
 #Define Volume
-VOLUME ["/var/www/", "/etc/apache2/sites-enabled/"]
+VOLUME ["/var/www/", "/etc/apache24/sites-enabled/"]
 
 #Define workdir
 WORKDIR /var/www/html
