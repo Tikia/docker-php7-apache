@@ -1,19 +1,15 @@
 # docker-php7-apache
 
-Based on Debian 9 Stretch (docker image debian/stretch)
+Based on php:7.2-apache
 
 Install :
 - NTP, NTPdate
-- Apache2
-- PHP 7.0
-- libapache2-mod-php7.0
-- php7.0-common php7.0-mysql php7.0-curl php7.0-gd php7.0-intl php-pear php-imagick php7.0-imap mcrypt php7.0-mcrypt php-memcache php7.0-pspell php7.0-recode php7.0-sqlite3 php7.0-tidy php7.0-xml php7.0-xmlrpc php7.0-xsl php7.0-mbstring php-gettext php7.0-zip imagemagick php-imagick
-- python-letsencrypt-apache
+- curl, g++, zlib1g, libicu-dev, libmemcached-dev, libpq-dev, libjpeg-dev, libpng-dev, libfreetype6-dev, libssl-dev, libmcrypt-dev, libxml2-dev, libc-client-dev, libkrb5-dev, libldb-dev, libldap2-dev, librecode-dev, libtidy-dev
+- php extensions : mysqli, pdo_mysql, pdo_pgsql, pgsql, gd, exif, ftp, imap, ldap, intl, simplexml, xml, tidy, xmlrpc, opcache, json, mbstring, recode, gettext, shmop, zip, dom, iconv, session, sockets
+- letsencrypt.sh-apache2
 
 Config Apache :
 - Active module : rewrite ssl include status
-- Active site : default-ssl
-- vHost file
 
 Port exposed : 80
 
