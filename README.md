@@ -15,5 +15,4 @@ Port exposed : 80
 
 Volumes :
 - httpdocs : /var/www/
-- vHost conf : /etc/apache24/vhost/
-- log : /var/log/apache/
+- vHost conf : /etc/apache2/sites-enabled/
