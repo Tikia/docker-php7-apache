@@ -110,6 +110,11 @@ RUN docker-php-ext-install sockets
 #Activate Apache module : SSL, rewrite include status
 RUN a2enmod rewrite ssl include status
 
+#Remove symbolics links for logs
+RUN rm -f /var/log/apache2/access.log
+RUN rm -f /var/log/apache2/error.log
+RUN rm -f /var/log/apache2/other_vhosts_access.log
+
 #Install letsencrypt
 RUN apt-get -y install letsencrypt.sh-apache2
 
@@ -117,7 +122,7 @@ RUN apt-get -y install letsencrypt.sh-apache2
 EXPOSE 80
 
 #Define Volume
-VOLUME ["/var/www/", "/etc/apache2/sites-enabled/"]
+VOLUME ["/var/www/", "/etc/apache2/sites-enabled/", "/var/log/apache2/"]
 
 #Define workdir
 WORKDIR /var/www/html
