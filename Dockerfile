@@ -1,4 +1,4 @@
-FROM php:7.2-apache
+FROM php:7.3.32-apache
 MAINTAINER Tikia "renaud@tikia.net"
 
 #Update OS
